@@ -31,8 +31,8 @@
                               │   (Port 27017)     │
                               │   - Membri         │
                               │   - Photos         │
-                              │   - Users          │
                               └────────────────────┘
+                              
 ```
 
 ### Componenti Principali
