@@ -72,6 +72,7 @@ cloudflared --version
 sudo cloudflared service install
 ```
 
+Da qui procedere con una normale creazione di un tunnel cloudflare
 
 # Docker Compose
 
