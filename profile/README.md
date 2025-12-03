@@ -104,7 +104,7 @@ services:
       - api_data:/app/uploads/images
 
   mongodb:
-    image: mongo:6
+    image: mongo:4.4
     container_name: mongodb
     restart: unless-stopped
     ports:
