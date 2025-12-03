@@ -62,3 +62,61 @@
    - SSL/TLS automatico
    - Protezione DDoS
 
+# Docker Compose
+
+```yaml
+version: "3.9"
+
+services:
+  frontend:
+    image: matteo0202/famiglia-tree:latest
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    networks:
+      - appnet
+
+  backend:
+    image: matteo0202/famiglia-tree-api:latest
+    container_name: backend
+    restart: unless-stopped
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/familytree
+    ports:
+      - "3002:3002"
+    networks:
+      - appnet
+    depends_on:
+      - mongodb
+    volumes:
+      - api_data:/app/uploads/images
+
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - appnet
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel run progetto-familytree
+    volumes:
+      - ~/.cloudflared:/etc/cloudflared
+    networks:
+      - appnet
+
+networks:
+  appnet:
+
+volumes:
+  mongo_data:
+  api_data:
+```
