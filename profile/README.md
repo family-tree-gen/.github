@@ -62,6 +62,17 @@
    - SSL/TLS automatico
    - Protezione DDoS
 
+# Setup Cloudflare
+
+## Linux
+```sh
+wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+sudo dpkg -i cloudflared-linux-amd64.deb
+cloudflared --version
+sudo cloudflared service install
+```
+
+
 # Docker Compose
 
 ```yaml
