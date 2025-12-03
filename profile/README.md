@@ -9,7 +9,7 @@
 🍿 Fun facts - what does your team eat for breakfast?
 🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 -->
-## 🏗️ Architettura del Sistema
+# 🏗️ Architettura del Sistema
 
 ### Schema Architetturale
 
@@ -62,9 +62,11 @@
    - SSL/TLS automatico
    - Protezione DDoS
 
-# Setup Cloudflare
+# Installazione 
 
-## Linux
+## Setup Cloudflare
+
+### Linux
 ```sh
 wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 sudo dpkg -i cloudflared-linux-amd64.deb
@@ -74,7 +76,7 @@ sudo cloudflared service install
 
 Da qui procedere con una normale creazione di un tunnel cloudflare
 
-# Docker Compose
+## Docker Compose
 
 ```yaml
 version: "3.9"
